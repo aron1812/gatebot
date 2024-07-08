@@ -1,5 +1,6 @@
 import copy
 import json
+from dotenv import load_dotenv
 import os
 import logging
 import uuid
@@ -33,8 +34,9 @@ from backend.utils import (
     convert_to_pf_format,
     format_pf_non_streaming_response,
 )
-
+load_dotenv()
 bp = Blueprint("routes", __name__, static_folder="static", template_folder="static")
+
 
 
 def create_app():
