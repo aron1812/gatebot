@@ -63,7 +63,7 @@ jobs:
     
     steps:
       - name: Download artifact from build job
-        uses: actions/upload-artifact@v3
+        uses: actions/download-artifact@v3
         with:
           name: python-app
 
@@ -76,5 +76,5 @@ jobs:
         with:
           app-name: 'GateBot'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EA55FA026DCD46D9A93F3A1B100867CE }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           startup-command: 'gunicorn app:app'
